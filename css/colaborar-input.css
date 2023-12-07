@@ -1,0 +1,26 @@
+/* autocomplete */
+.autocomplete-suggestions {
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    position: absolute;
+    display: none;
+}
+
+.autocomplete-suggestion {
+    padding: 5px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+}
+
+.autocomplete-suggestion:hover {
+    background-color: #f0f0f0;
+}
+
+/* botão adicionar novo colaborador */
+
+.mov-btn{top: 85px;
+    right: 10px;
+    position: fixed;
+    cursor: pointer;
+    outline: none;}
