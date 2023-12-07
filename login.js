@@ -3,7 +3,7 @@ function logar(){
     var senha = document.getElementById('senha').value;
 
     if(login == "admin" && senha == "admin"){
-        location.href = "../painel/index1.html";
+        location.href = "painel/index1.html";
     }else{
         alert("usuario e senha incorretos")
     }
