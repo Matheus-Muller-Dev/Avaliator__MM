@@ -1,3 +1,7 @@
+<?php
+session_start()
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>  
@@ -8,6 +12,12 @@
     <title>LOGIN AVBB</title>
 </head>
 <body>
+    <?php
+    include "php\conexao.php"
+    //continuar depois
+    if (isset($ ))
+
+    ?>
     <main>
         <form action="">
             <div id="image-container"> 
