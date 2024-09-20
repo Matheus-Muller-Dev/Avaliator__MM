@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/fonts/fonts.css"> 
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/input.css">
+    <!-- menu -->
+    <script src="menu-ocult/carregarimg.js"></script>
+    <script src="menu-ocult/corFundo.js"></script>
+    <script src="menu-ocult/menu.js"></script>
+    <link rel="stylesheet" href="menu-ocult/style.css">
+
+    <!-- <link rel="stylesheet" href="./menu/style.css"> -->
+
+    <title>AVT | MM</title>
+</head>
+<body>
+
+    <button class="barrinha" onclick="toggleMenu()">☰</button>
+    <div class="menuOpcoes">
+        <a href="#" onclick="mostrarDiv()">Mudar Layout</a>
+        <!-- Adicione mais opções aqui -->
+    </div>
+
+    <div class="divOculta" id="minhaDiv">
+    <div class="img-div">
+    <h2>Escolha uma cor ou uma imagem de sua preferencia!</h2>
+    <button id="btnEscolherImagem">Escolher Imagem de Fundo</button>
+    <button id="limpar">Limpar fundo</button>
+    <input type="file" id="inputImagem" accept="image/*" style="display:none;">
+    </div>
+
+    <div class="btn-div">
+    <h2>Cores</h2>
+    <div class="cont-btn">
+    <button id="btn-laranja" class="laranja">laranja</button>
+    <button id="btn-azul" class="azul">azul</button>
+    <button id="btn-verde" class="verde">verde</button>
+    <button id="btn-branco" class="branco">branco</button>
+    </div>
+    </div>
+    </div>
+    
+    <img id="backgroundImage">
+
+
+
+
+
+    <div class="content">
+
+
+        <h1 id="h1_texto">FAÇA SUA AVALIAÇÃO | MM</h1>
+        
+            <!-- essa div vai agrupar todas elas -->
+            <div class="content--add-item">
+                <!-- input, botão -->
+                
+                <input type="text" id="nomeUsuario" placeholder="Digite o nome do colaborador" class="input-new-task">
+                <button onclick="clickUser()" id="bnt-new-task" title="Clique aqui para uma nova task">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                    </svg>  
+                </button>
+            </div>        
+        </div>
+
+
+
+    <main>
+        <section>
+          <div class="box-resultado">
+           <div id="textoExibido" class="textoExibido1"></div>
+          </div>
+        <div class="container">
+            <div class="box-img">
+                <img id="minhaImagem" src="../banco.dados/img/feliz.png" alt="Feliz " class="face-feliz">
+                <img id="minhaImagem2" src="../banco.dados/img/neutro.png" alt="Médio "  class="face-neutro">
+                <img id="minhaImagem3" src="../banco.dados/img/ruim.png" alt="Ruim " class="face-ruim">
+            </div>
+        </div>
+       </section>
+
+       <script>
+        function elevarImagem(imagem) {
+            imagem.style.transform = 'translateY(-10px)';
+            setTimeout(() => {
+                imagem.style.transform = 'translateY(0)';
+            }, 300); // Ajuste o tempo da animação (300ms no exemplo)
+        }
+    </script>
+        
+    </main>
+</body>
+<script src="script copy.js"></script>
+<!-- <script src="script.js"></script> -->
+<!-- <script src="votar.js"></script> -->
+</html>
