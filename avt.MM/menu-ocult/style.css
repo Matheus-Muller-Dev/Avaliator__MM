@@ -110,7 +110,11 @@ h2{
     background-color: #ccc;
     width: 300px;
     height: 60px;
+}
 
+.btn-div:hover {
+    background-color: aqua;
+    size: 20px;
 }
 
 .img-div{
