@@ -22,11 +22,12 @@ const db = getFirestore(app);
 // Função para salvar a avaliação no Firestore
 async function salvarAvaliacao(usuario, avaliacao, comentario) {
     try {
+        // Adiciona um novo documento à coleção "avaliacoes"
         const docRef = await addDoc(collection(db, "avaliacoes"), {
             usuario: usuario,
             avaliacao: avaliacao,
             comentario: comentario,
-            data: new Date().toISOString()
+            data: new Date().toISOString() // Salva a data/hora atual no padrão ISO
         });
         console.log("Avaliação salva com sucesso! ID do documento: ", docRef.id);
     } catch (error) {
@@ -35,12 +36,12 @@ async function salvarAvaliacao(usuario, avaliacao, comentario) {
 }
 
 // Variáveis globais
-var usuarioSelecionado = '';
-var bloquearClique = false;
+let usuarioSelecionado = '';
+let bloquearClique = false;
 
 // Função para selecionar o usuário
 function clickUser() {
-    var nomeUsuario = document.getElementById("nomeUsuario").value.trim();
+    const nomeUsuario = document.getElementById("nomeUsuario").value.trim();
 
     if (nomeUsuario === "") {
         exibirMensagem("Coloque o nome do colaborador.", true);
@@ -50,9 +51,11 @@ function clickUser() {
     }
 }
 
+window.clickUser = clickUser;
+
 // Função para exibir mensagens com estilo
 function exibirMensagem(mensagem, erro = false) {
-    var textoExibidoElement = document.getElementById("textoExibido");
+    const textoExibidoElement = document.getElementById("textoExibido");
     textoExibidoElement.innerHTML = mensagem;
     textoExibidoElement.className = erro ? "texto-exibido-estilizadoerro" : "texto-exibido-estilizado";
 }
@@ -62,19 +65,24 @@ document.querySelectorAll('.face-feliz, .face-neutro, .face-ruim').forEach(funct
     imagem.addEventListener('click', function() {
         if (bloquearClique) return;
 
-        var avaliacao = imagem.alt;
-        var comentario = document.getElementById("comentario").value.trim();
+        const avaliacao = imagem.alt;
+        const comentario = document.getElementById("comentario").value.trim();
 
         if (usuarioSelecionado === '') {
             exibirMensagem("Selecione um usuário primeiro.", true);
+        } else if (!avaliacao) {
+            exibirMensagem("Selecione uma avaliação.", true);
+        } else if (comentario === '') {
+            exibirMensagem("Por favor, insira um comentário.", true);
         } else {
             bloquearClique = true;
             salvarAvaliacao(usuarioSelecionado, avaliacao, comentario);
             exibirMensagem(`Avaliação de ${usuarioSelecionado}: ${avaliacao}`, false);
 
+            // Libera o próximo clique após 5 segundos
             setTimeout(function() {
                 bloquearClique = false;
-            }, 5000); // Tempo para liberar o próximo clique
+            }, 5000);
         }
     });
 });

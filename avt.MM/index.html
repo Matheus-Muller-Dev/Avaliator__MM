@@ -4,16 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/fonts/fonts.css">
+    <!-- <link rel="stylesheet" href="./assets/fonts/fonts.css"> -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/input.css">
-    <!-- menu -->
-    <script src="menu-ocult/carregarimg.js"></script>
-    <script src="menu-ocult/corFundo.js"></script>
-    <script src="menu-ocult/menu.js"></script>
-    <link rel="stylesheet" href="menu-ocult/style.css">
-
-    <!-- <link rel="stylesheet" href="./menu/style.css"> -->
 
     <title>AVT | MM</title>
 </head>
@@ -64,12 +57,14 @@
         </section>
 
         <script>
+        document.addEventListener("DOMContentLoaded", function() {
             function elevarImagem(imagem) {
                 imagem.style.transform = 'translateY(-10px)';
                 setTimeout(() => {
                     imagem.style.transform = 'translateY(0)';
                 }, 300); // Ajuste o tempo da animação (300ms no exemplo)
             }
+        });
         </script>
 
     </main>
@@ -91,11 +86,15 @@
     </div>
 
 
+<!-- menu -->
+<script src="menu-ocult/carregarimg.js"></script>
+<script src="menu-ocult/corFundo.js"></script>
+<script src="menu-ocult/menu.js"></script>
+<link rel="stylesheet" href="menu-ocult/style.css">
+<!-- fim menu -->
 
-   
 </body>
-<script src="script copy.js"></script>
-<!-- <script src="script.js"></script> -->
-<!-- <script src="votar.js"></script> -->
+<script src="script copy.js" type="module"></script>
+
 
 </html>
