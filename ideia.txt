@@ -1,4 +1,0 @@
-Fazer alteraçao dos arquivos para melhorar o sistema
-
-migrar totalmente com o firebase
-testar banco de dados do firebase

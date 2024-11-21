@@ -1,101 +1,85 @@
-// Função para salvar a avaliação no Local Storage
-function salvarAvaliacao(usuario, avaliacao) {
-    // Verifica se o navegador suporta o Local Storage
-    if (typeof(Storage) !== "undefined") {
-        // Obtém o valor atual do Local Storage (se existir)
-        var avaliacoesSalvas = localStorage.getItem('avaliacoes');
+// Configuração do Firebase
+// Certifique-se de ter configurado o firebaseconfig.js corretamente e importado no projeto
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
 
-        // Converte o valor de volta para um objeto JavaScript (se existir)
-        avaliacoesSalvas = avaliacoesSalvas ? JSON.parse(avaliacoesSalvas) : {};
+// Substitua pelos dados do seu projeto Firebase
+const firebaseConfig = {
+    apiKey: "AIzaSyBigD49qfw4JrQlFID5MwooEUSUeXF3W40",
+    authDomain: "avaliador-7d185.firebaseapp.com",
+    databaseURL: "https://avaliador-7d185-default-rtdb.firebaseio.com",
+    projectId: "avaliador-7d185",
+    storageBucket: "avaliador-7d185.firebasestorage.app",
+    messagingSenderId: "174581300292",
+    appId: "1:174581300292:web:1befd5c6e8ad80e6031011",
+    measurementId: "G-BFGYNYKNTH"
+  };
 
-        // Cria um array para o usuário se não existir
-        avaliacoesSalvas[usuario] = avaliacoesSalvas[usuario] || [];
+// Inicializa o Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-        // Adiciona a nova avaliação ao array do usuário
-        avaliacoesSalvas[usuario].push(avaliacao);
-
-        // Converte o objeto para uma string JSON e salva no Local Storage
-        localStorage.setItem('avaliacoes', JSON.stringify(avaliacoesSalvas));
-
-        console.log('Avaliação salva com sucesso!');
-    } else {
-        console.log('Desculpe, seu navegador não suporta o Local Storage.');
+// Função para salvar a avaliação no Firestore
+async function salvarAvaliacao(usuario, avaliacao, comentario) {
+    try {
+        const docRef = await addDoc(collection(db, "avaliacoes"), {
+            usuario: usuario,
+            avaliacao: avaliacao,
+            comentario: comentario,
+            data: new Date().toISOString()
+        });
+        console.log("Avaliação salva com sucesso! ID do documento: ", docRef.id);
+    } catch (error) {
+        console.error("Erro ao salvar avaliação: ", error);
     }
 }
 
-function adicionarEstilosAoTexto() {
-    var textoExibidoElement = document.getElementById("textoExibido");
-    textoExibidoElement.classList.add("texto-exibido-estilizado");
-}
-function adicionarEstilosAoTextoerro() {
-    var textoExibidoElement = document.getElementById("textoExibido");
-    textoExibidoElement.classList.add("texto-exibido-estilizadoerro");
-}
-
-// Código original
-var usuarios = {
-    "Matheus": null,
-    "Gabriel": null,
-    "Bob": null
-};
-
+// Variáveis globais
 var usuarioSelecionado = '';
-var contador = 0;
 var bloquearClique = false;
 
+// Função para selecionar o usuário
 function clickUser() {
-    var nomeUsuario = document.getElementById("nomeUsuario").value;
-   
-    if (nomeUsuario.trim() === "") {
-        document.getElementById("textoExibido").innerHTML = "Coloque o nome do colaborador.";
-        adicionarEstilosAoTextoerro();
+    var nomeUsuario = document.getElementById("nomeUsuario").value.trim();
 
-    } else if (usuarios.hasOwnProperty(nomeUsuario)) {
+    if (nomeUsuario === "") {
+        exibirMensagem("Coloque o nome do colaborador.", true);
+    } else {
         usuarioSelecionado = nomeUsuario;
-        document.getElementById("textoExibido").innerHTML = "Qual é a sua satisfação com o colaborador " + nomeUsuario + "?";
-        adicionarEstilosAoTexto();
-    }
-     else {
-        document.getElementById("textoExibido").innerHTML = "Nome do colaborador inválido. Tente novamente.";
-        adicionarEstilosAoTextoerro();
+        exibirMensagem("Qual é a sua satisfação com o colaborador " + nomeUsuario + "?", false);
     }
 }
 
-var imagens = document.querySelectorAll('.face-feliz, .face-neutro, .face-ruim');
+// Função para exibir mensagens com estilo
+function exibirMensagem(mensagem, erro = false) {
+    var textoExibidoElement = document.getElementById("textoExibido");
+    textoExibidoElement.innerHTML = mensagem;
+    textoExibidoElement.className = erro ? "texto-exibido-estilizadoerro" : "texto-exibido-estilizado";
+}
 
-imagens.forEach(function(imagem) {
+// Configuração dos eventos de clique nos emojis
+document.querySelectorAll('.face-feliz, .face-neutro, .face-ruim').forEach(function(imagem) {
     imagem.addEventListener('click', function() {
-        if (bloquearClique) {
-            return;
-        }
+        if (bloquearClique) return;
 
         var avaliacao = imagem.alt;
-        
-        if (usuarioSelecionado !== '') {
-            usuarios[usuarioSelecionado] = avaliacao;
-            contador++;
-            document.getElementById("textoExibido").innerHTML = "Avaliação de " + usuarioSelecionado + ": " + avaliacao;
-            adicionarEstilosAoTexto();
+        var comentario = document.getElementById("comentario").value.trim();
 
-            // Salva a avaliação no Local Storage associada ao usuário
-            salvarAvaliacao(usuarioSelecionado, avaliacao);
-
+        if (usuarioSelecionado === '') {
+            exibirMensagem("Selecione um usuário primeiro.", true);
+        } else {
             bloquearClique = true;
+            salvarAvaliacao(usuarioSelecionado, avaliacao, comentario);
+            exibirMensagem(`Avaliação de ${usuarioSelecionado}: ${avaliacao}`, false);
 
             setTimeout(function() {
                 bloquearClique = false;
-            }, 10000);
-
-        } else {
-            document.getElementById("textoExibido").innerHTML = "Selecione um usuário primeiro.";
-            adicionarEstilosAoTextoerro();
+            }, 5000); // Tempo para liberar o próximo clique
         }
     });
 });
 
-// Adiciona um botão para acionar o redirecionamento
+// Botão para redirecionar
 document.getElementById('redirecionarBtn').addEventListener('click', function() {
-    var totalAvaliacoes = JSON.parse(localStorage.getItem('avaliacoes'))[usuarioSelecionado]?.length || 0;
-    window.location.href = `index2.html?usuario=${usuarioSelecionado}&totalAvaliacoes=${totalAvaliacoes}`;
+    window.location.href = `index2.html?usuario=${usuarioSelecionado}`;
 });
-
