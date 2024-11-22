@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css_javascript/style.css">
-    <script src="css_javascript/login.js"></script>
-    <title>LOGIN AVBB</title>
+    <script src="firebase/arquivo.js" type="module"></script>
+    <title>LOGIN</title>
 </head>
 <body>
     <main>
@@ -14,14 +14,14 @@
             <div class="box">
                 <h1 class="h1-inicio">FAÇA SEU LOGIN</h1>
                 <label for="">
-                    <input type="text" id="login" class="input-des" placeholder="digite o valor" autocomplete="off">
+                    <input type="text" id="login" class="input-des" placeholder="Digite o usuario" autocomplete="off">
                 </label>
                 <br><br>
                 <label for="">
-                    <input type="password" id="senha" class="input-des" placeholder="digite sua senha">
+                    <input type="password" id="senha" class="input-des" placeholder="Digite a senha">
                 </label>
                 <br><br>
-                <button type="submit" onclick="logar(); return false">ENTRAR</button>
+                <button type="button" id="loginButton">ENTRAR</button>
             </div>
     </main>
 </body>
