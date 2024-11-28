@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comentarios</title>
+  <style>
+    .data-list li {
+      margin-bottom: 20px;
+        list-style-type: none;
+    } 
+
+    #comments-section {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+    }
+    .coment {
+      margin-bottom : 10px;
+      padding: 5px;
+      border-bottom: 1px solid #ddd;
+    }
+    .comentario:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Avaliações de usuários</h1>
+  <ul id="data-list"></ul>
+  <div id="chart"></div>
+
+  <h2>Filtrar por Humor:</h2>
+  <div id="filter-options">
+    <label><input type="radio" name="humor-filter" value="feliz"> Feliz</label>
+    <label><input type="radio" name="humor-filter" value="medio"> Médio</label>
+    <label><input type="radio" name="humor-filter" value="ruim"> Ruim</label>
+    <label><input type="radio" name="humor-filter" value="todos" checked> Todos</label>
+  </div>
+
+  <h2>Comentarios: </h2>
+  <div id="comments-section" class="data-list"></div>
+
+
+  <!-- Firebase Scripts -->
+  <script type="module" src="app.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</body>
+</html>

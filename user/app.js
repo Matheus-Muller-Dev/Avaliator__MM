@@ -41,6 +41,7 @@ const fetchAndDisplayData = async () => {
   try {
       const querySnapshot = await getDocs(collection(db, "avaliacoes"));
       const humorCounts = { feliz: 0, neutro: 0, ruim: 0 };
+      const commentsSection = document.getElementById("comments-section");
 
       querySnapshot.forEach((doc) => {
           const data = doc.data();
@@ -48,8 +49,20 @@ const fetchAndDisplayData = async () => {
           if (humor && humorCounts.hasOwnProperty(humor)) {
               humorCounts[humor]++;
           }
+
+         // exibe comentarios
+         if (data.comentario) {
+             const commentDiv = document.createElement("li");
+             commentDiv.classList.add("comment");
+             commentDiv.innerHTML = `
+                <strong>Humor:</strong> ${data.humor || "Não especificado"}<br>
+                <strong>Comentário:</strong> ${data.comentario}
+             `;
+             commentsSection.appendChild(commentDiv)
+             }
       });
       console.log(humorCounts)
+    //   console.log(comentarios)
       plotBarChart(humorCounts);
   } catch (error) {
       console.error("Erro ao buscar documentos:", error);
