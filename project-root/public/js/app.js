@@ -41,32 +41,65 @@ const fetchAndDisplayData = async () => {
   try {
       const querySnapshot = await getDocs(collection(db, "avaliacoes"));
       const humorCounts = { feliz: 0, neutro: 0, ruim: 0 };
-      const commentsSection = document.getElementById("comments-section");
+      const comments = [];
 
       querySnapshot.forEach((doc) => {
           const data = doc.data();
           const humor = data.humor?.toLowerCase().trim();
+
           if (humor && humorCounts.hasOwnProperty(humor)) {
               humorCounts[humor]++;
           }
 
+          if (data.comentario && humor) {
+            comments.push({ humor, comentario: data.comentario});
+          }
+        });
+
+        plotBarChart(humorCounts);
+
+        renderComments(comments);
+
+        setupFilter(comments);
+
+    } catch (error) {
+        console.error("Erro ao buscar documentos:", error);
+    }
+};
+const renderComments = (comment, filter = "todos") => {
+    const commentsSection = document.getElementById("comments-section");
+    commentsSection.innerHTML = ""; // limpa a seção de comentários
+
+    const filteredComments = filter === "todos"
+    ? comments
+    : comments.filter(comment => comment.humor === filter);
+
+    if (filteredComments.length === 0) {
+        commentsSection.innerHTML = "<p>Nenhum comentario</p>";
+        return;
+    }
+
+
          // exibe comentarios
-         if (data.comentario) {
-             const commentDiv = document.createElement("li");
-             commentDiv.classList.add("comment");
-             commentDiv.innerHTML = `
-                <strong>Humor:</strong> ${data.humor || "Não especificado"}<br>
-                <strong>Comentário:</strong> ${data.comentario}
-             `;
-             commentsSection.appendChild(commentDiv)
-             }
-      });
-      console.log(humorCounts)
-    //   console.log(comentarios)
-      plotBarChart(humorCounts);
-  } catch (error) {
-      console.error("Erro ao buscar documentos:", error);
-  }
+filteredComments.forEach(({ humor, comentario }) => {
+    const commentDiv = document.createElement("div");
+    commentDiv.classList.add("comment");
+    commentDiv.innerHTML = `
+      <strong>Humor:</strong> ${humor}<br>
+      <strong>Comentário:</strong> ${comentario}
+    `;
+    commentsSection.appendChild(commentDiv);
+  });
+};
+
+const setupFilter = (comments) => {
+    const filterOptions = document.getElementsByName("humor-filter");
+    filterOptions.forEach(option => {
+        option.addEventListener("change", (e) => {
+            const selectdFilter = e.target.value;
+            renderComments(comments, selectdFilter);
+        });
+    });
 };
 
 // Função para plotar gráfico de barras com D3.js
