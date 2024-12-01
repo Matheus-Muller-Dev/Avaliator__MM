@@ -43,30 +43,29 @@ const fetchAndDisplayData = async () => {
         console.error("Erro ao buscar documentos:", error);
     }
 };
-const renderComments = (comment, filter = "todos") => {
+const renderComments = (comments, filter = "todos") => { // Corrige o parâmetro para 'comments'
     const commentsSection = document.getElementById("comments-section");
-    commentsSection.innerHTML = ""; // limpa a seção de comentários
+    commentsSection.innerHTML = ""; // Limpa a seção de comentários
 
     const filteredComments = filter === "todos"
-    ? comments
-    : comments.filter(comment => comment.humor === filter);
+        ? comments
+        : comments.filter(comment => comment.humor === filter);
 
     if (filteredComments.length === 0) {
-        commentsSection.innerHTML = "<p>Nenhum comentario</p>";
+        commentsSection.innerHTML = "<p>Nenhum comentário</p>";
         return;
     }
 
-
-         // exibe comentarios
-filteredComments.forEach(({ humor, comentario }) => {
-    const commentDiv = document.createElement("div");
-    commentDiv.classList.add("comment");
-    commentDiv.innerHTML = `
-      <strong>Humor:</strong> ${humor}<br>
-      <strong>Comentário:</strong> ${comentario}
-    `;
-    commentsSection.appendChild(commentDiv);
-  });
+    // Exibe comentários
+    filteredComments.forEach(({ humor, comentario }) => {
+        const commentDiv = document.createElement("div");
+        commentDiv.classList.add("comment");
+        commentDiv.innerHTML = `
+          <strong>Humor:</strong> ${humor}<br>
+          <strong>Comentário:</strong> ${comentario}
+        `;
+        commentsSection.appendChild(commentDiv);
+    });
 };
 
 const setupFilter = (comments) => {
