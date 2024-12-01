@@ -72,4 +72,21 @@ img{
     transform: translateY(-10px); /* Move a imagem para cima ao passar o mouse sobre ela */
 }
 
+.content{
+    
+    justify-content: center;
+    align-items: center;
+}
 
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.content--add-item{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}

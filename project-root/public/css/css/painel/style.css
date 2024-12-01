@@ -1,0 +1,55 @@
+@import "https://fonts.googleapis.com/css?family=Montserrat";
+body{
+   font-family:'Montserrat',sans-serif;
+   height: 1366px;
+   overflow: hidden;
+}
+#image-container{
+  position: fixed; /* Fixar o contêiner para cobrir toda a tela */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('../../../assets/10503426_4485876.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  z-index: -1;
+}
+.cards{
+        display: flex;
+        padding: 35px;
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+      
+      
+.container{
+        padding: 25px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 150px
+    }
+      
+    #h1_texto {
+      background-color: rgba(255, 255, 255, 0.6); /* Cor branca meio transparente */
+      border: 1px solid #ddd; /* Borda cinza claro */
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      margin-left: auto; /* Centralizar à esquerda */
+      margin-right: auto; /* Centralizar à direita */
+      max-width: 600px; /* Largura máxima desejada */
+    }
+    #h1_texto h1 {
+      margin: 0;
+      font-size: 24px;
+      color: #333; /* Cor do texto */
+    }

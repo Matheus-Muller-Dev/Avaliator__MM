@@ -10,7 +10,7 @@ async function login(event) {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
         console.log("Usuário logado:", user);
-        window.location.href = "painel/index1.html";
+        window.location.href = "../../project-root/painel/index1.html";
     } catch (error) {
         const errorCode = error.code;
         const errorMessage = error.message;

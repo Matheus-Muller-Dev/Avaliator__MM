@@ -13,29 +13,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// // Funçao para buscar e exibir os dados
-// const fetchAndDisplayData = async () => {
-//     try {
-//       const querySnapshot = await getDocs(collection(db, "avaliacoes"));
-//       const dataList = document.getElementById("data-list");
-//       querySnapshot.forEach((doc) => {
-//         const data = doc.data();
-//         // Verifica se os campos 'comentario' e 'humor' existem no documento
-//         if (data.comentario && data.humor) {
-//           // Cria um item de lista para cada documento
-//           const listItem = document.createElement("li");
-//           listItem.innerHTML = `
-//             <strong>Humor:</strong> ${data.humor}<br>
-//             <strong>Comentário:</strong> ${data.comentario}
-//           `;
-//           dataList.appendChild(listItem);
-//         }
-//       });
-//     } catch (error) {
-//       console.error("Erro ao buscar documentos:", error);
-//     }
-//   };
-
 // Função para buscar dados e plotar gráfico
 const fetchAndDisplayData = async () => {
   try {
