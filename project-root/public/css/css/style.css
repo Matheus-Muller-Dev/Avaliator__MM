@@ -1,6 +1,6 @@
 
 
-body{
+.body.ava{
     font-size: 17px;
     overflow: hidden;
 }
@@ -36,8 +36,10 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 130px;
+    padding-top: 100px;
     position: relative;
+    max-width: 100%;
+    margin-top: 25px;
 }
 img{
     width: 10%;
@@ -45,11 +47,11 @@ img{
     margin: 0 10px;   
     max-width: 100%;
 }
-.face-ruim{
+#face-ruim{
     width: 11.9%;
     
 }
-.face-neutro{
+#face-neutro{
     padding-left: 50px;
     padding-right: 50px;
 }
@@ -60,28 +62,25 @@ img{
     max-height: 0;
     margin-top: 50px;
 }
-.face-neutro,
-.face-ruim,
-.face-feliz {
+#face-neutro,
+#face-ruim,
+#face-feliz {
     transition: transform 0.3s ease; /* Adiciona uma transição suave */
 }
 
-.face-neutro:hover,
-.face-ruim:hover,
-.face-feliz:hover{
+#face-neutro:hover,
+#face-ruim:hover,
+#face-feliz:hover{
     transform: translateY(-10px); /* Move a imagem para cima ao passar o mouse sobre ela */
 }
 
 .content{
-    
     justify-content: center;
     align-items: center;
-}
-
-.content{
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 2rem;
+    
 }
 
 .content--add-item{
@@ -90,3 +89,89 @@ img{
     gap: 1rem;
     flex-wrap: wrap;
 }
+
+button{
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #45a049;
+    transition: 0.5s;
+}
+
+.styled-textarea {
+    width: 400px;
+    height: 75px;
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #fff;
+    resize: none; /* Impede redimensionamento */
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.styled-textarea:focus {
+    border-color: #4a90e2; /* Cor da borda ao focar */
+    box-shadow: 0 0 10px rgba(74, 144, 226, 0.5); /* Sombra azul */
+}
+
+.box-email {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 210px;
+    position: relative;
+    max-width: 100%;
+    margin-top: 25px;
+    text-align: center;
+}
+.texto-email, .input-email, .button-email {
+    margin: 10px 0;
+}
+.button-email {
+        padding: 15px 20px;
+        margin: 10px 0;
+
+}
+
+.input-email {
+    padding: 12px 15px;
+    width: 100%;
+    max-width: 300px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.input-email:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+.input-email::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+.texto-email {
+    font-size: 18px;
+    font-weight: bold;
+    
+    background-color: #f0f9f0; /* Fundo suave */
+    padding: 10px 15px;
+    border-left: 4px solid #4CAF50;
+    border-right: 4px solid #4CAF50;;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
