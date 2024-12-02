@@ -1,5 +1,5 @@
 @import "https://fonts.googleapis.com/css?family=Montserrat";
-body{
+.body.pai{
    font-family:'Montserrat',sans-serif;
    height: 1366px;
    overflow: hidden;
