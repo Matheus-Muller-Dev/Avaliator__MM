@@ -5,11 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../project-root/public/css/css/style.css">
+    <link rel="stylesheet" href="../project-root/public/css/css/painel/style.css">
+
     <title>AVT | MM</title>
 </head>
 
-<body>
-    <h1>FAÇA SUA AVALIAÇÃO | MM</h1>
+<body class="body.ava">
+    <div id="h1_texto">
+        <h1>FAÇA SUA AVALIAÇÃO | MM</h1>
+    </div>
+    <div id="image-container">
     <main>
         <section>
             <div class="box-resultado">
@@ -17,16 +22,16 @@
             </div>
             <div class="container">
                 <div class="box-img">
-                    <img src="../project-root/public/assets/feliz.png" alt="Feliz" class="emoji" data-humor="Feliz">
-                    <img src="../project-root/public/assets/neutro.png" alt="Neutro" class="emoji" data-humor="Neutro">
-                    <img src="../project-root/public/assets/ruim.png" alt="Ruim" class="emoji" data-humor="Ruim">
+                    <img src="../project-root/public/assets/feliz.png" alt="Feliz" class="emoji" id="face-feliz" data-humor="Feliz">
+                    <img src="../project-root/public/assets/neutro.png" alt="Neutro" class="emoji" id="face-neutro" data-humor="Neutro">
+                    <img src="../project-root/public/assets/ruim.png" alt="Ruim" class="emoji" id="face-ruim" data-humor="Ruim">
                 </div>
             </div>
         </section>
     </main>
 
     <div class="content">
-        <textarea id="comentario" placeholder="Digite seu comentário"></textarea>
+        <textarea class="styled-textarea" id="comentario" placeholder="Digite seu comentário"></textarea>
         <button id="enviarAvaliacao">Enviar Avaliação</button>
     </div>
 
