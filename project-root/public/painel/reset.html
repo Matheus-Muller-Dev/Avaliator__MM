@@ -4,12 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RESETAR SENHA</title>
-</head>'
-<body>
-    <h1>REDEFINIR SENHA ADM</h1>
-    <p>Insira o e-mail do adm para redefinir a senha:</p>
-    <input type="email" id="email" placeholder="Seu e-mail">
-    <button onclick="resetPassword()">Enviar</button>
+    <link rel="stylesheet" href="../css/css/style.css">
+    <link rel="stylesheet" href="../css/css/painel/style.css">
+
+    
+</head>
+<body class="body.pai">
+    <div id="h1_texto">
+        <h1>REDEFINIR SENHA ADM</h1>
+    </div>
+    <div id="image-container">
+    
+    <div class="box-email">
+    <p class="texto-email">Insira o e-mail do adm para redefinir a senha:</p>
+    <input type="email" id="email" class="input-email" placeholder="Seu e-mail">
+    <button onclick="resetPassword()" class="button-email">Enviar</button>
+    </div>
 
     <script type="module" src="/project-root/public/js/edit.js"></script>
 </body>
