@@ -55,6 +55,7 @@ const renderComments = (comments, filter = "todos") => { // Corrige o parâmetro
         commentsSection.innerHTML = "<p>Nenhum comentário</p>";
         return;
     }
+   
 
     // Exibe comentários
     filteredComments.forEach(({ humor, comentario }) => {
@@ -67,6 +68,21 @@ const renderComments = (comments, filter = "todos") => { // Corrige o parâmetro
         commentsSection.appendChild(commentDiv);
     });
 };
+
+    const style = document.createElement("style");
+    style.textContent = `
+        .comment {
+             font-size: 18px;
+             font-weight: bold;
+             background-color: #f0f9f0; /* Fundo suave */
+             padding: 10px 15px;
+             border-left: 4px solid #4CAF50;
+             border-right: 4px solid #4CAF50;;
+             border-radius: 5px;
+             margin-bottom: 20px;
+            }
+        `;
+        document.head.appendChild(style);
 
 const setupFilter = (comments) => {
     const filterOptions = document.getElementsByName("humor-filter");
