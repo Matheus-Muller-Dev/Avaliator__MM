@@ -49,12 +49,16 @@ O sistema ainda está em desenvolvimento e passará por futuras melhorias e adi�
 
 - **Armazenamento no Firebase:** Os dados de humor e comentários são enviados para o Firestore Database.
 
+- **Relatório de avaliação:** Relatórios e estatísticas das avaliações e comentarios de usuarios.
+
+- **Reset de senha:** O usuário pode mudar sua senha de autenticação por email, enviado do proprio firebase para sua caixa de entrada
+
 ## 🔨 Melhorias Planejadas
-- Adicionar autenticação para usuários.
+- Melhorar autenticação para usuários.
 
-- Melhorar a interface do usuário com um design mais responsivo.
+- Rotas que serão utilizadas na aplicação
 
-- Implementar relatórios e estatísticas das avaliações.
+- alguns ajustes no css em painel/index1.html e user/avaliacoes.html
 
 ## 🤝 Como contribuir 
 
