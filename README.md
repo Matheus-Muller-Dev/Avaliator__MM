@@ -60,7 +60,7 @@ O sistema ainda está em desenvolvimento e passará por futuras melhorias e adi�
 
 - alguns ajustes no css em painel/index1.html e user/avaliacoes.html
 
-- criar css para mensagem alert em project-root/public/js/script.js
+- criar popup para mensagem alert em project-root/public/js/script.js
 
 ## 🤝 Como contribuir 
 
