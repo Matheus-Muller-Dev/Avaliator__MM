@@ -9,7 +9,15 @@ async function login(event) {
     try {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
-        console.log("Usuário logado:", user);
+
+        //Obtém o token do usuário
+        const idToken = await user.getIdToken();
+        console.log("Token do usuário:", idToken)
+
+        // Armazena o token no localStorage
+        localStorage.setItem('userToken', idToken);
+
+        // Redireciona para o painel
         window.location.href = "../../project-root/public/painel/index1.html";
     } catch (error) {
         const errorCode = error.code;
