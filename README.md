@@ -53,9 +53,9 @@ O sistema ainda está em desenvolvimento e passará por futuras melhorias e adi�
 
 - **Reset de senha:** O usuário pode mudar sua senha de autenticação por email, enviado do proprio firebase para sua caixa de entrada
 
-## 🔨 Melhorias Planejadas
-- Melhorar autenticação para usuários.
+- **Autenticação de usuario por token:** O usuário tem um token assim que realiza o login, caso realize o logout não é possivel entrar no sistema pela url sem antes estar devidamente conectado
 
+## 🔨 Melhorias Planejadas
 - Rotas que serão utilizadas na aplicação
 
 - alguns ajustes no css em painel/index1.html e user/avaliacoes.html
