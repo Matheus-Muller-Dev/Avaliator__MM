@@ -51,16 +51,17 @@ O sistema ainda está em desenvolvimento e passará por futuras melhorias e adi�
 
 - **Relatório de avaliação:** Relatórios e estatísticas das avaliações e comentarios de usuarios.
 
-- **Reset de senha:** O usuário pode mudar sua senha de autenticação por email, enviado do proprio firebase para sua caixa de entrada
+- **Reset de senha:** O usuário pode mudar sua senha de autenticação por email, enviado do proprio firebase para sua caixa de entrada.
 
-- **Autenticação de usuario por token:** O usuário tem um token assim que realiza o login, caso realize o logout não é possivel entrar no sistema pela url sem antes estar devidamente conectado
+- **Autenticação de usuario por token:** O usuário tem um token assim que realiza o login, caso realize o logout não é possivel entrar no sistema pela url sem antes estar devidamente conectado.
+
+- **Popup personalizados:** Alertas personalizados usando o sweetalert2.
 
 ## 🔨 Melhorias Planejadas
 - Rotas que serão utilizadas na aplicação
 
 - alguns ajustes no css em painel/index1.html e user/avaliacoes.html
 
-- criar popup para mensagem alert em project-root/public/js/script.js
 
 ## 🤝 Como contribuir 
 
