@@ -174,3 +174,22 @@ button:hover{
     text-align: center;
 }
 
+.mensagem {
+
+        font-size: 18px;
+        font-weight: bold;
+        background-color: #f0f9f0; /* Fundo suave */
+        padding: 10px 15px;
+        border-left: 4px solid #4CAF50;
+        border-right: 4px solid #4CAF50;;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        text-align: center;
+        margin-top: 190px;
+        
+}
+
+.hide {
+    display: none;
+}
+

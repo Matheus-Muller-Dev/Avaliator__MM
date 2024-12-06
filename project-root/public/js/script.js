@@ -17,28 +17,12 @@ const db = getFirestore(app);
 
 let humorSelecionado = "";
 
-const style = document.createElement("style");
-    style.textContent = `
-        #mensagem {
-           font-size: 18px;
-           font-weight: bold;
-           background-color: #f0f9f0; /* Fundo suave */
-           padding: 10px 15px;
-           border-left: 4px solid #4CAF50;
-           border-right: 4px solid #4CAF50;;
-           border-radius: 5px;
-           margin-bottom: 15px;
-           text-align: center;
-           margin-top: 190px;
-            }
+mensagem.classList.toggle("hide")
 
-            `;
-        document.head.appendChild(style);
-        
-// Evento para selecionar o humor
 document.querySelectorAll(".emoji").forEach((emoji) => {
     emoji.addEventListener("click", (event) => {
         humorSelecionado = event.target.dataset.humor;
+        mensagem.classList.toggle("hide")
         document.getElementById("mensagem").textContent = `Você selecionou: ${humorSelecionado}`;
     });
 });
