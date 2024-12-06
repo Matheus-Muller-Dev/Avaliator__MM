@@ -1,7 +1,7 @@
 import { FirebaseError } from "firebase/app";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
 import { getAuth, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-auth.js";
-import { ErrorEmail } from "./modal";
+import { ErrorEmail, EmailAlert } from "./modal";
 
 const firebaseConfig = {
     apiKey: import.meta.env.VITE_API_KEY,
@@ -25,10 +25,9 @@ async function resetPassword() {
 
     try {
         await sendPasswordResetEmail(auth, email);
-        alert("E-mail para redefinição de senha enviado com sucesso! Verifique sua caixa de entrada.");
+        EmailAlert()
     } catch (error) {
         console.error("Erro ao enviar o e-mail de redefinição:", error);
-        alert("Erro ao redefinir a senha: " + error.message);
     }
 }
 

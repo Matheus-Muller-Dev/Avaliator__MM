@@ -1,7 +1,7 @@
 export function ButtonAlert() {
     Swal.fire({
-        title: "Good job!",
-        text: "You clicked the button!",
+        title: "Obrigado por sua avaliação.",
+        text: "foi enviada com sucesso.",
         icon: "success"
 });
 };
@@ -21,6 +21,14 @@ export function ErrorEmail(){
         text: "Por favor, digite um e-mail...",
       });
 }
+
+export function EmailAlert() {
+    Swal.fire({
+        title: "E-mail para redefinição de senha enviado com sucesso! ",
+        text: "Verifique sua caixa de entrada.",
+        icon: "success"
+});
+};
 
 export function Errorlogin(){
     Swal.fire({
