@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../project-root/public/css/css/style.css">
     <link rel="stylesheet" href="../project-root/public/css/css/painel/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.min.css">
     <script src="../../../src/firebase/authGuard.js" type="module"></script>
     <title>AVT | MM</title>
 </head>
@@ -36,10 +37,11 @@
 
     <div class="content">
         <textarea class="styled-textarea" id="comentario" placeholder="Digite seu comentário"></textarea>
-        <button id="enviarAvaliacao">Enviar Avaliação</button>
+        <button id="enviarAvaliacao" onclick="ButtonAlert()">Enviar Avaliação</button>
     </div>
 
     <script src="../project-root/public/js/script.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.all.min.js"></script>
 </body>
 
 </html>

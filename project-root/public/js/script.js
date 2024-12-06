@@ -1,6 +1,7 @@
 // Configuração do Firebase
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { ButtonAlert, ErroButtonEmoji, ErroButtonComentario} from "./modal.js"
 
 const firebaseConfig = {
     apiKey: import.meta.env.VITE_API_KEY,
@@ -33,7 +34,6 @@ const style = document.createElement("style");
 
             `;
         document.head.appendChild(style);
-
         
 // Evento para selecionar o humor
 document.querySelectorAll(".emoji").forEach((emoji) => {
@@ -48,12 +48,12 @@ document.getElementById("enviarAvaliacao").addEventListener("click", async () =>
     const comentario = document.getElementById("comentario").value.trim();
 
     if (!humorSelecionado) {
-        alert("Por favor, selecione um humor.");
+        ErroButtonEmoji()
         return;
     }
 
     if (!comentario) {
-        alert("Por favor, insira um comentário.");
+        ErroButtonComentario()
         return;
     }
 
@@ -63,7 +63,7 @@ document.getElementById("enviarAvaliacao").addEventListener("click", async () =>
             comentario: comentario,
             data: new Date().toISOString(),
         });
-        alert("Avaliação enviada com sucesso! ID: " + docRef.id);
+        ButtonAlert();
         document.getElementById("comentario").value = "";
         humorSelecionado = "";
         document.getElementById("mensagem").textContent = "";

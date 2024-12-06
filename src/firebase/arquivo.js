@@ -1,5 +1,6 @@
 import { auth } from './firebaseConfig';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import { Errorlogin } from '../../project-root/public/js/modal';
 
 async function login(event) {
     event.preventDefault();
@@ -22,7 +23,7 @@ async function login(event) {
     } catch (error) {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.error("Erro ao fazer login:", errorCode, errorMessage);
+        Errorlogin()
     }
 }
 

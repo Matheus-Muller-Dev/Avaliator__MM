@@ -1,6 +1,7 @@
 import { FirebaseError } from "firebase/app";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
 import { getAuth, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-auth.js";
+import { ErrorEmail } from "./modal";
 
 const firebaseConfig = {
     apiKey: import.meta.env.VITE_API_KEY,
@@ -18,7 +19,7 @@ async function resetPassword() {
     const email = document.getElementById("email").value;
 
     if (!email) {
-       alert("Por favor, insira um e-mail");
+       ErrorEmail()
        return;
     }
 
