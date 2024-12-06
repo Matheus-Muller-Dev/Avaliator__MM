@@ -22,7 +22,7 @@ mensagem.classList.toggle("hide")
 document.querySelectorAll(".emoji").forEach((emoji) => {
     emoji.addEventListener("click", (event) => {
         humorSelecionado = event.target.dataset.humor;
-        mensagem.classList.toggle("hide")
+        mensagem.classList.remove("hide")
         document.getElementById("mensagem").textContent = `Você selecionou: ${humorSelecionado}`;
     });
 });
