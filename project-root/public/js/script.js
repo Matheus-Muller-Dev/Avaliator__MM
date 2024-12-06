@@ -30,7 +30,6 @@ document.querySelectorAll(".emoji").forEach((emoji) => {
 //Evento para enviar avaliação
 document.getElementById("enviarAvaliacao").addEventListener("click", async () => {
     const comentario = document.getElementById("comentario").value.trim();
-
     if (!humorSelecionado) {
         ErroButtonEmoji()
         return;
@@ -51,6 +50,8 @@ document.getElementById("enviarAvaliacao").addEventListener("click", async () =>
         document.getElementById("comentario").value = "";
         humorSelecionado = "";
         document.getElementById("mensagem").textContent = "";
+        mensagem.classList.toggle("hide")
+        
     } catch (error) {
         alert("Erro ao enviar avaliação: " + error.message);
     }
