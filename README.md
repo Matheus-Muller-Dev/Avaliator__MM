@@ -58,9 +58,7 @@ O sistema ainda está em desenvolvimento e passará por futuras melhorias e adi�
 - **Popup personalizados:** Alertas personalizados usando o sweetalert2.
 
 ## 🔨 Melhorias Planejadas
-- Rotas que serão utilizadas na aplicação
-
-- alguns ajustes no css em painel/index1.html e user/avaliacoes.html
+- Melhorar a estrutura de pasta do projeto
 
 
 ## 🤝 Como contribuir 
