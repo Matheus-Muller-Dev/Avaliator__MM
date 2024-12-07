@@ -60,6 +60,7 @@ O sistema ainda está em desenvolvimento e passará por futuras melhorias e adi�
 ## 🔨 Melhorias Planejadas
 - Melhorar a estrutura de pasta do projeto
 
+- Instalar o express e construir backend no sistema
 
 ## 🤝 Como contribuir 
 
