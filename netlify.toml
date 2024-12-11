@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/painel/*"
+  to = "/painel/index1.html"
+  status = 200

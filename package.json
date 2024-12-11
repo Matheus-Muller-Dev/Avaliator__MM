@@ -2,7 +2,8 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "firebase": "^11.0.2",
-    "live-server": "^1.2.2"
+    "live-server": "^1.2.2",
+    "netlify-cli": "^17.38.0"
   },
   "devDependencies": {
     "vite": "^5.4.11"
@@ -11,4 +12,3 @@
     "dev": "vite"
   }
 }
-
