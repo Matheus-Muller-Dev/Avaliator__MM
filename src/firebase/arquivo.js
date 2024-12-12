@@ -19,7 +19,7 @@ async function login(event) {
         localStorage.setItem('userToken', idToken);
 
         // Redireciona para o painel
-        window.location.href = "/painel/painel.html";
+        window.location.href = "painel/painel.html";
     } catch (error) {
         const errorCode = error.code;
         const errorMessage = error.message;
