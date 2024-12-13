@@ -1,7 +1,7 @@
-<h1 align="center">SISTEMA DE AVALIAÇÃO</h1>
+<h1 align="center">😄SISTEMA DE AVALIAÇÃO😄</h1>
 <p align="center">
 
-<img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=FINALIZADO🚀&color=GREEN&style=for-the-badge"/>
+<img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=FINALIZADO&color=GREEN&style=for-the-badge"/>
 </p>
 
 <img src="/project-root/public/assets/banner.png">
