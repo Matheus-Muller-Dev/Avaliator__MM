@@ -1,6 +1,7 @@
 import { auth } from './firebaseConfig';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Errorlogin } from '../../project-root/public/js/modal';
+import { setPersistence, browserLocalPersistence } from "firebase/auth";
 
 async function login(event) {
     event.preventDefault();
@@ -8,10 +9,13 @@ async function login(event) {
     const password = document.getElementById('senha').value;
 
     try {
+        await setPersistence(auth, browserLocalPersistence);
+
+        // login
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
 
-        //Obtém o token do usuário
+        // ReceBe o token do usuário
         const idToken = await user.getIdToken();
         console.log("Token do usuário:", idToken)
 

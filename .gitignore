@@ -1,2 +1,6 @@
 .env
 futuraEstrutura.txt
+
+# Certificados SSL para desenvolvimento
+key.pem
+cert.pem
