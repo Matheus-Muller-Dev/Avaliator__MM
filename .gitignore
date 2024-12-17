@@ -4,3 +4,5 @@ futuraEstrutura.txt
 # Certificados SSL para desenvolvimento
 key.pem
 cert.pem
+# Local Netlify folder
+.netlify
