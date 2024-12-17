@@ -17,13 +17,12 @@ async function login(event) {
 
         // ReceBe o token do usuário
         const idToken = await user.getIdToken();
-        console.log("Token do usuário:", idToken)
 
         // Armazena o token no localStorage
         localStorage.setItem('userToken', idToken);
 
         // Redireciona para o painel
-        window.location.href = "painel/painel.html";
+        window.location.href = "/painel/painel.html";
     } catch (error) {
         const errorCode = error.code;
         const errorMessage = error.message;
