@@ -1,6 +1,6 @@
 import { auth } from './firebaseConfig';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { Errorlogin } from '../../project-root/public/js/modal';
+import { Errorlogin } from '../../public/js/modal';
 import { setPersistence, browserLocalPersistence } from "firebase/auth";
 
 async function login(event) {

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel ="icon" type="image/x-icon" href="../../public/assets/felicidade.png">
+  <title>Comentarios</title>
+  <link rel="stylesheet" href="../css/css/painel/avaliacao.css">
+  <script src="../../../src/firebase/authGuard.js" type="module"></script>
+
+</head>
+
+<body>
+  <div id="image-container-avaliacao">
+
+  <div id="h1_texto-title">
+  <h1>Avaliações de usuários</h1>
+  </div>
+  
+  <div id="h1_texto-graf">
+  <ul id="data-list"></ul>
+  <div id="chart"></div>
+  </div>
+
+  <div id="h1_texto-avaliacao">
+  <h2>Filtrar por Humor:</h2>
+  <div id="filter-options">
+    <label><input type="radio" name="humor-filter" value="feliz"> Feliz</label>
+    <label><input type="radio" name="humor-filter" value="neutro"> Médio</label>
+    <label><input type="radio" name="humor-filter" value="ruim"> Ruim</label>
+    <label><input type="radio" name="humor-filter" value="todos" checked> Todos</label>
+  </div>
+  </div>
+
+  <div id="h1_texto-text">
+  <h2>Comentarios: </h2> 
+  <div id="comments-section" class="data-list">
+  </div>
+  </div>
+
+  <!-- Firebase Scripts -->
+  <script type="module" src="/public/js/app.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</body>
+</html>
