@@ -1,6 +1,6 @@
-import { auth } from './firebaseConfig';
+import { auth } from './firebaseConfig.js';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { Errorlogin } from '../../project-root/public/js/modal';
+import { Errorlogin } from '../js/modal.js';
 
 async function login(event) {
     event.preventDefault();
@@ -19,7 +19,7 @@ async function login(event) {
         localStorage.setItem('userToken', idToken);
 
         // Redireciona para o painel
-        window.location.href = "/painel/index1.html";
+        window.location.href = "public/menu.html";
     } catch (error) {
         const errorCode = error.code;
         const errorMessage = error.message;

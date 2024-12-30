@@ -1,4 +1,4 @@
-import { auth, signOut } from './firebaseConfig';
+import { auth, signOut } from 'firebaseConfig';
 
     document.getElementById('logoutButton').addEventListener('click', (event) => {
         event.preventDefault(); // Impede o comportamento padrão do link
@@ -8,7 +8,7 @@ import { auth, signOut } from './firebaseConfig';
                 localStorage.removeItem('userToken');
 
                 // Redireciona para a página de login
-                window.location.href = "../../index.html";
+                window.location.href = "public/index.html";
             })
             .catch((error) => {
                 console.error("Erro ao fazer logout:", error);

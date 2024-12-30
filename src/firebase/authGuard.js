@@ -1,4 +1,4 @@
-import { auth } from './firebaseConfig';
+import { auth } from 'firebaseConfig';
 import { onAuthStateChanged } from 'firebase/auth';
 
 function checkAuth() {
@@ -6,7 +6,7 @@ function checkAuth() {
 
     if (!userToken) {
         alert('Você precisa estar logado para acessar esta página.');
-        window.location.href = "../../../project-root/public/index.html";
+        window.location.href = "public/index.html";
     }
 
     // Opcional: Validar token no backend ou decodificá-lo (usando biblioteca como jwt-decode)
