@@ -1,4 +1,4 @@
-import { auth, signOut } from 'firebaseConfig';
+import { auth, signOut } from './firebaseConfig.js';
 
     document.getElementById('logoutButton').addEventListener('click', (event) => {
         event.preventDefault(); // Impede o comportamento padrão do link

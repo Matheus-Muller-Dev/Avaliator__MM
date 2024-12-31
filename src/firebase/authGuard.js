@@ -1,4 +1,4 @@
-import { auth } from 'firebaseConfig';
+import { auth } from './firebaseConfig.js';
 import { onAuthStateChanged } from 'firebase/auth';
 
 function checkAuth() {

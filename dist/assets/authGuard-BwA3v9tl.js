@@ -1,0 +1,1 @@
+import"./firebaseConfig-CjeAtYOY.js";function e(){localStorage.getItem("userToken")||(alert("Você precisa estar logado para acessar esta página."),window.location.href="public/index.html")}document.addEventListener("DOMContentLoaded",e);
