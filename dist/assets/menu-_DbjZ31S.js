@@ -1,1 +1,0 @@
-import{b as t,a as r}from"./firebaseConfig-CjeAtYOY.js";import"./authGuard-BwA3v9tl.js";/* empty css              */document.getElementById("logoutButton").addEventListener("click",e=>{e.preventDefault(),t(r).then(()=>{localStorage.removeItem("userToken"),window.location.href="public/index.html"}).catch(o=>{console.error("Erro ao fazer logout:",o)})});

@@ -1,14 +1,17 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-    root: './public',
-    build: {
-        outDir: 'dist',  // Certifique-se de que os arquivos de build vão para 'dist'
-        rollupOptions: {
-          input: '/index.html'  // Especifique explicitamente o arquivo de entrada
-        }  // Certifique-se de que o Vite está gerando a pasta dist
-  },
-  server: {
-    open: '/index.html', // Isso abrirá o arquivo index.html no navegador automaticamente
+  build: {
+    outDir: 'dist', // Define a pasta de saída
+    emptyOutDir: true, // Limpa a pasta dist antes do build
+    rollupOptions: {
+      input: {
+        main: './public/index.html',
+        avaliacao: './public/avaliacoes.html',
+        menu: './public/menu.html',
+        painel: './public/painel.html',
+        reset: './public/reset.html',
+      },
+    },
   },
 });
