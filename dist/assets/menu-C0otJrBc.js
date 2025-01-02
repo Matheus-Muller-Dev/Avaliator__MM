@@ -1,1 +1,0 @@
-import{b as e,c as o,a as r}from"./modal-Bav0lMtZ.js";import"./authGuard-BQXBfg4x.js";/* empty css              */document.getElementById("logoutButton").addEventListener("click",t=>{t.preventDefault(),e(r).then(()=>{localStorage.removeItem("userToken"),window.location.href="index.html"}).catch(n=>{o()})});
