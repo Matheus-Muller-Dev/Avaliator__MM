@@ -1,16 +1,17 @@
 import { defineConfig } from 'vite';
+import path from 'path';
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
   build: {
-    outDir: 'dist', // Define a pasta de saída
-    emptyOutDir: true, // Limpa a pasta dist antes do build
+    outDir: 'dist',
     rollupOptions: {
       input: {
-        main: './public/index.html',
-        avaliacao: './public/avaliacoes.html',
-        menu: './public/menu.html',
-        painel: './public/painel.html',
-        reset: './public/reset.html',
+        main: './index.html',
       },
     },
   },
